@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/v_16dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.question.CheckDM">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aladin"
+            android:gravity="center_horizontal"
+            android:text="No. 1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/primaryText"
+            android:textSize="@dimen/v_30sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightgray" />
+
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="200dp"-->
+        <!--            android:layout_marginTop="@dimen/v_16dp"-->
+        <!--            android:background="@color/lightgray"-->
+        <!--            android:padding="10dp">-->
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="@dimen/v_16dp"
+            android:background="@color/lightgray"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_soal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="15dp"
+                android:textSize="20sp" />
+        </androidx.core.widget.NestedScrollView>
+        <!--        </LinearLayout>-->
+
+        <RadioGroup
+            android:id="@+id/rg_opt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/v_16dp">
+
+            <RadioButton
+                android:id="@+id/rb_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="A. Jawaban"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/rb_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="B. Jawaban"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/rb_c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="C. Jawaban"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/rb_d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="D. Jawaban"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/rb_e"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="E. Jawaban"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/rb_f"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="F. Jawaban"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/rb_g"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="G. Jawaban"
+                android:textSize="18sp" />
+        </RadioGroup>
+
+
+        <Button
+            android:id="@+id/btn_lanjut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/v_30dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_curve_pres"
+            android:clickable="true"
+            android:text="Lanjut"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

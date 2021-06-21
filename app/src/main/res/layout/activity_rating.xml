@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/v_16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="Berikan rating dan ulasan anda"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:numStars="5"
+        android:rating="5"
+        android:stepSize="1" />
+
+    <TextView
+        android:id="@+id/tv_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Awesome. I love it"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edt_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="Tulis disini untuk kemajuan aplikasi"
+        android:inputType="textMultiLine"
+        android:lines="5" />
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/v_16dp"
+        android:background="@drawable/btn_curve_pres"
+        android:text="Send feedback"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

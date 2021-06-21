@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.quisdiabetes">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.data_diri.Pasien">
+
+        </activity>
+        <activity android:name=".Rating" />
+        <activity
+            android:name=".activity.question.DetailQuestion" />
+        <activity android:name=".activity.SkorDM" />
+        <activity android:name=".activity.history.History" />
+        <activity
+            android:name=".activity.question.CheckDM"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

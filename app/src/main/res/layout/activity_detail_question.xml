@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/v_16dp"
+    android:orientation="vertical"
+    tools:context=".activity.question.DetailQuestion">
+
+    <include
+        layout="@layout/resiko_dm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/v_16dp"
+        android:layout_marginTop="@dimen/v_16dp"
+        android:layout_marginRight="@dimen/v_16dp"
+        android:background="@color/lightgray" />
+
+    <ImageButton
+        android:id="@+id/home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/v_30dp"
+        android:background="#CCFFFFFF"
+        android:src="@drawable/home" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/v_16dp">
+
+        <TextView
+            android:id="@+id/tv_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/v_16sp"
+            android:visibility="gone"
+            tools:text="@string/resiko_tinggi" />
+
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

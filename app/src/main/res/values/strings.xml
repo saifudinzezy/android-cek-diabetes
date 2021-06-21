@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Cek Diabet</string>
+    <string name="resiko_rendah">Pasien pada kategori risiko rendah boleh menjalankan puasa Ramadan dengan
+        tetap mengikuti anjuran perawatan diabetes mandiri selama puasa Ramadan.</string>
+    <string name="resiko_sedang">Pasien pada kategori risiko sedang disarankan tidak menjalankan puasa Ramadan.
+        Jika tetap ingin menjalankan puasa, maka sangat dianjurkan untuk melakukan konsultasi terlebih
+        dahulu dengan dokter/tenaga kesehatan.</string>
+    <string name="resiko_tinggi">Pasien pada kategori risiko tinggi sangat dianjurkan untuk tidak menjalankan
+        puasa Ramadan karena sangat berisiko terjadinya komplikasi akut. Jika tetap ingin menjalankan puasa,
+        maka harus dalam pengawasan dokter.</string>
+</resources>

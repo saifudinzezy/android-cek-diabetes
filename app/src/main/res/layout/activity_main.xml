@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fcfcfc"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aladin"
+            android:layout_marginTop="@dimen/v_16sp"
+            android:gravity="center_horizontal"
+            android:text="Aplikasi Pengkajian Risiko Berpuasa Bagi Diabetisi"
+            android:textAlignment="center"
+            android:textColor="@color/purple_500"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="36sp" />
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/v_16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fcfcfc"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <!--One Parrent View-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <!--One CardView-->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cek_resiko"
+                    android:layout_width="160dp"
+                    android:layout_height="190dp"
+                    android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp">
+
+                    <!--One Nested Parrent View-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:background="@drawable/cerclebackgroundpurple"
+                            android:padding="10dp"
+                            android:src="@drawable/sugar_blood" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Cek Resiko"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            tools:ignore="RtlCompat" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="10dp"
+                            android:background="@color/lightgray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Cek Resiko DM Anda"
+                            android:textColor="@android:color/darker_gray" />
+
+                    </LinearLayout>
+                    <!--End One Nested Parrent View-->
+                </androidx.cardview.widget.CardView>
+                <!--End One CardView-->
+            </LinearLayout>
+            <!--End One Parrent View-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/riwayat"
+                android:layout_width="160dp"
+                android:layout_height="190dp"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
+
+                <!--One Nested Parrent View-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/cercleshape"
+                        android:padding="10dp"
+                        android:src="@drawable/history" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Riwayat"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        tools:ignore="RtlCompat" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/lightgray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Lihat Riwayat Anda"
+                        android:textColor="@android:color/darker_gray" />
+
+                </LinearLayout>
+                <!--End One Nested Parrent View-->
+            </androidx.cardview.widget.CardView>
+            <!--End One Parrent View-->
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
