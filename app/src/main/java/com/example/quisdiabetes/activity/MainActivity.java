@@ -14,6 +14,12 @@ import com.example.quisdiabetes.activity.history.History;
 import com.example.quisdiabetes.activity.question.CheckDM;
 import com.example.quisdiabetes.helper.RandomString;
 import com.example.quisdiabetes.helper.SharedRef;
+import com.firebase.ui.auth.AuthUI;
+import com.firebase.ui.auth.ErrorCodes;
+import com.firebase.ui.auth.IdpResponse;
+import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Arrays;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -26,8 +32,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        UUID();
-        if (!sharedRef.getPerijinan()) permission();
+        sharedRef = new SharedRef(this);
+        if (sharedRef.getUUID().isEmpty()){
+            UUID();
+        }
     }
 
     @OnClick({R.id.cek_resiko, R.id.riwayat})
@@ -43,9 +51,45 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void UUID(){
-        sharedRef = new SharedRef(this);
-        if (sharedRef.getUUID().isEmpty()) sharedRef.saveUUID(RandomString.generateRandomStringByUUIDNoDash());
-        //Toast.makeText(this, "UUID " + sharedRef.getUUID(), Toast.LENGTH_SHORT).show();
+        //if (sharedRef.getUUID().isEmpty()) sharedRef.saveUUID(RandomString.generateRandomStringByUUIDNoDash());
+        startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(
+                Arrays.asList(new AuthUI.IdpConfig.Builder(AuthUI.PHONE_VERIFICATION_PROVIDER).build())).build(), 1000);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1000) {
+
+            IdpResponse response = IdpResponse.fromResultIntent(data);
+            if (resultCode == RESULT_OK) {
+                if (!FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber().isEmpty()) {
+                    //save number
+                    sharedRef.saveUUID(FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber());
+                    Toast.makeText(this, "No HP Sudah Terdaftar!", Toast.LENGTH_SHORT).show();
+                    if (!sharedRef.getPerijinan()) permission();
+                    return;
+
+                } else {
+                    if (response == null) {
+                        Toast.makeText(this, "Sign In Failed", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    if (response.getErrorCode() == ErrorCodes.NO_NETWORK) {
+                        Toast.makeText(this, "No Network", Toast.LENGTH_SHORT).show();
+
+                        return;
+                    }
+
+                    if (response.getErrorCode() == ErrorCodes.UNKNOWN_ERROR) {
+                        Toast.makeText(this, "unkown Error", Toast.LENGTH_SHORT).show();
+
+                        return;
+                    }
+                }
+            }
+        }
     }
 
     public void permission() {

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "48150191484",
+    "project_id": "diabet-30dd5",
+    "storage_bucket": "diabet-30dd5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:48150191484:android:c85a7599be721b0fc2d8f9",
+        "android_client_info": {
+          "package_name": "com.cekdiabet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "48150191484-rikievmh6h87fl0cmjpvpnniacjbuf3q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOm2GMwl2ozAETUqwUa_WWY0PC0hdSMfw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "48150191484-rikievmh6h87fl0cmjpvpnniacjbuf3q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
