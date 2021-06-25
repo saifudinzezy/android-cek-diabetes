@@ -11,14 +11,19 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".activity.data_diri.Pasien">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".activity.history_user.HistoryUserActivity"/>
+        <activity android:name=".activity.login.LoginActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".activity.data_diri.Pasien" />
         <activity android:name=".Rating" />
-        <activity
-            android:name=".activity.question.DetailQuestion" />
+        <activity android:name=".activity.question.DetailQuestion" />
         <activity android:name=".activity.SkorDM" />
         <activity android:name=".activity.history.History" />
         <activity
@@ -26,13 +31,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
 
         <meta-data
             android:name="preloaded_fonts"

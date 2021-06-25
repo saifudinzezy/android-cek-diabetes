@@ -10,9 +10,13 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface ApiService {
+    @GET("read/uuid.php")
+    Call<ResponsePasien> getUUID();
+
     @FormUrlEncoded
     @POST("read/pasien.php")
     Call<ResponsePasien> getByUUIDHistory(@Field("uuid") String uuid);

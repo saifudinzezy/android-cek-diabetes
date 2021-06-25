@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.quisdiabetes.R;
 import com.example.quisdiabetes.activity.data_diri.Pasien;
 import com.example.quisdiabetes.activity.history.History;
+import com.example.quisdiabetes.activity.history_user.HistoryUserActivity;
 import com.example.quisdiabetes.activity.question.CheckDM;
 import com.example.quisdiabetes.helper.RandomString;
 import com.example.quisdiabetes.helper.SharedRef;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         if (!sharedRef.getPerijinan()) permission();
     }
 
-    @OnClick({R.id.cek_resiko, R.id.riwayat})
+    @OnClick({R.id.cek_resiko, R.id.riwayat, R.id.cv_riwayat_user})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.cek_resiko:
@@ -38,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.riwayat:
                 startActivity(new Intent(this, History.class));
+                break;
+            case R.id.cv_riwayat_user:
+                startActivity(new Intent(this, HistoryUserActivity.class));
                 break;
         }
     }
