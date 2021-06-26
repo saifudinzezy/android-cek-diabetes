@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Cek Diabet</string>
+    <string name="app_name">Admin Cek Diabet</string>
     <string name="resiko_rendah">Pasien pada kategori risiko rendah boleh menjalankan puasa Ramadan dengan
         tetap mengikuti anjuran perawatan diabetes mandiri selama puasa Ramadan.</string>
     <string name="resiko_sedang">Pasien pada kategori risiko sedang disarankan tidak menjalankan puasa Ramadan.

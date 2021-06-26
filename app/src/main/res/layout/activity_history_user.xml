@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_margin="@dimen/v_16dp"
+    android:layout_marginLeft="@dimen/v_16dp"
+    android:layout_marginRight="@dimen/v_16dp"
+    android:layout_marginBottom="@dimen/v_16dp"
     android:layout_height="match_parent">
 
     <ProgressBar
@@ -15,7 +17,6 @@
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/refresh"
-        android:layout_marginTop="@dimen/v_16dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">

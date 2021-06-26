@@ -90,7 +90,7 @@ public class History extends AppCompatActivity {
 
         String uuid = getIntent().getStringExtra(DATA);
         if (uuid != null){
-            Toast.makeText(this, uuid, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, uuid, Toast.LENGTH_SHORT).show();
             call = service.getByUUIDHistory(uuid);
         } else {
              call = service.getByUUIDHistory(sharedRef.getUUID());

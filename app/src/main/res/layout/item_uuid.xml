@@ -13,7 +13,7 @@
         android:layout_margin="10dp"
         android:clickable="true"
         android:foreground="?android:attr/selectableItemBackground"
-        app:cardBackgroundColor="@color/pink"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp">
 
@@ -31,18 +31,9 @@
                 android:padding="5dp"
                 android:textAlignment="center"
                 android:textAllCaps="true"
-                android:textColor="@android:color/white"
                 android:textSize="@dimen/v_18sp"
                 android:textStyle="bold"
                 tools:text="RESIKO TINGGI" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="@color/white" />
 
         </LinearLayout>
         <!--End One Nested Parrent View-->

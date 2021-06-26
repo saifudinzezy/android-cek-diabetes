@@ -4,23 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:layout_margin="@dimen/v_16dp"
     android:layout_gravity="center"
+    android:layout_margin="@dimen/v_16dp"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context="com.example.quisdiabetes.activity.login.LoginActivity">
 
     <ImageView
-        android:src="@drawable/logo"
-        android:scaleType="center"
         android:layout_width="match_parent"
-        android:layout_height="150dp"/>
+        android:layout_height="150dp"
+        android:scaleType="center"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/v_16dp"
+        android:fontFamily="serif"
+        android:text="Silahkan login terlebih dahulu"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/v_16dp"
         android:hint="Username">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -36,7 +44,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/v_16dp"
-        android:hint="Password">
+        android:hint="Password"
+        app:passwordToggleDrawable="@drawable/toggle_password"
+        app:passwordToggleEnabled="true">>
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_password"
