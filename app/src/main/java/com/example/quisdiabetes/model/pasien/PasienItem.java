@@ -12,6 +12,9 @@ public class PasienItem implements Parcelable {
 	@SerializedName("provinsi")
 	private String provinsi;
 
+	@SerializedName("is_puasa")
+	private boolean isPuasa;
+
 	@SerializedName("uuip")
 	private String uuip;
 
@@ -21,11 +24,17 @@ public class PasienItem implements Parcelable {
 	@SerializedName("pekerjaan")
 	private String pekerjaan;
 
+	@SerializedName("no_hp")
+	private String noHp;
+
 	@SerializedName("question")
 	private List<QuestionItem> question;
 
 	@SerializedName("rasio_dm")
 	private String rasioDm;
+
+	@SerializedName("lama_puasa")
+	private String lamaPuasa;
 
 	@SerializedName("jenkel")
 	private String jenkel;
@@ -33,16 +42,8 @@ public class PasienItem implements Parcelable {
 	@SerializedName("uuid")
 	private String uuid;
 
-	@SerializedName("no_hp")
-	private String noHp;
-
-	public String getNoHp() {
-		return noHp;
-	}
-
-	public void setNoHp(String noHp) {
-		this.noHp = noHp;
-	}
+	@SerializedName("alasan")
+	private List<String> alasan;
 
 	public void setProvinsi(String provinsi){
 		this.provinsi = provinsi;
@@ -50,6 +51,14 @@ public class PasienItem implements Parcelable {
 
 	public String getProvinsi(){
 		return provinsi;
+	}
+
+	public void setIsPuasa(boolean isPuasa){
+		this.isPuasa = isPuasa;
+	}
+
+	public boolean isIsPuasa(){
+		return isPuasa;
 	}
 
 	public void setUuip(String uuip){
@@ -76,6 +85,14 @@ public class PasienItem implements Parcelable {
 		return pekerjaan;
 	}
 
+	public void setNoHp(String noHp){
+		this.noHp = noHp;
+	}
+
+	public String getNoHp(){
+		return noHp;
+	}
+
 	public void setQuestion(List<QuestionItem> question){
 		this.question = question;
 	}
@@ -90,6 +107,14 @@ public class PasienItem implements Parcelable {
 
 	public String getRasioDm(){
 		return rasioDm;
+	}
+
+	public void setLamaPuasa(String lamaPuasa){
+		this.lamaPuasa = lamaPuasa;
+	}
+
+	public String getLamaPuasa(){
+		return lamaPuasa;
 	}
 
 	public void setJenkel(String jenkel){
@@ -108,8 +133,32 @@ public class PasienItem implements Parcelable {
 		return uuid;
 	}
 
-	public PasienItem() {
+	public void setAlasan(List<String> alasan){
+		this.alasan = alasan;
 	}
+
+	public List<String> getAlasan(){
+		return alasan;
+	}
+
+	@Override
+ 	public String toString(){
+		return 
+			"PasienItem{" + 
+			"provinsi = '" + provinsi + '\'' + 
+			",is_puasa = '" + isPuasa + '\'' + 
+			",uuip = '" + uuip + '\'' + 
+			",umur = '" + umur + '\'' + 
+			",pekerjaan = '" + pekerjaan + '\'' + 
+			",no_hp = '" + noHp + '\'' + 
+			",question = '" + question + '\'' + 
+			",rasio_dm = '" + rasioDm + '\'' + 
+			",lama_puasa = '" + lamaPuasa + '\'' + 
+			",jenkel = '" + jenkel + '\'' + 
+			",uuid = '" + uuid + '\'' + 
+			",alasan = '" + alasan + '\'' + 
+			"}";
+		}
 
 	@Override
 	public int describeContents() {
@@ -119,29 +168,39 @@ public class PasienItem implements Parcelable {
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
 		dest.writeString(this.provinsi);
+		dest.writeByte(this.isPuasa ? (byte) 1 : (byte) 0);
 		dest.writeString(this.uuip);
 		dest.writeString(this.umur);
 		dest.writeString(this.pekerjaan);
-		dest.writeTypedList(this.question);
+		dest.writeString(this.noHp);
+		dest.writeList(this.question);
 		dest.writeString(this.rasioDm);
+		dest.writeString(this.lamaPuasa);
 		dest.writeString(this.jenkel);
 		dest.writeString(this.uuid);
-		dest.writeString(this.noHp);
+		dest.writeStringList(this.alasan);
+	}
+
+	public PasienItem() {
 	}
 
 	protected PasienItem(Parcel in) {
 		this.provinsi = in.readString();
+		this.isPuasa = in.readByte() != 0;
 		this.uuip = in.readString();
 		this.umur = in.readString();
 		this.pekerjaan = in.readString();
-		this.question = in.createTypedArrayList(QuestionItem.CREATOR);
+		this.noHp = in.readString();
+		this.question = new ArrayList<QuestionItem>();
+		in.readList(this.question, QuestionItem.class.getClassLoader());
 		this.rasioDm = in.readString();
+		this.lamaPuasa = in.readString();
 		this.jenkel = in.readString();
 		this.uuid = in.readString();
-		this.noHp = in.readString();
+		this.alasan = in.createStringArrayList();
 	}
 
-	public static final Creator<PasienItem> CREATOR = new Creator<PasienItem>() {
+	public static final Parcelable.Creator<PasienItem> CREATOR = new Parcelable.Creator<PasienItem>() {
 		@Override
 		public PasienItem createFromParcel(Parcel source) {
 			return new PasienItem(source);

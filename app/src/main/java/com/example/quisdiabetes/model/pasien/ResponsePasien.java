@@ -1,12 +1,9 @@
 package com.example.quisdiabetes.model.pasien;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
-public class ResponsePasien implements Parcelable {
+public class ResponsePasien{
 
 	@SerializedName("pesan")
 	private String pesan;
@@ -42,35 +39,12 @@ public class ResponsePasien implements Parcelable {
 	}
 
 	@Override
-	public int describeContents() {
-		return 0;
-	}
-
-	@Override
-	public void writeToParcel(Parcel dest, int flags) {
-		dest.writeString(this.pesan);
-		dest.writeByte(this.response ? (byte) 1 : (byte) 0);
-		dest.writeTypedList(this.pasien);
-	}
-
-	public ResponsePasien() {
-	}
-
-	protected ResponsePasien(Parcel in) {
-		this.pesan = in.readString();
-		this.response = in.readByte() != 0;
-		this.pasien = in.createTypedArrayList(PasienItem.CREATOR);
-	}
-
-	public static final Parcelable.Creator<ResponsePasien> CREATOR = new Parcelable.Creator<ResponsePasien>() {
-		@Override
-		public ResponsePasien createFromParcel(Parcel source) {
-			return new ResponsePasien(source);
+ 	public String toString(){
+		return 
+			"ResponsePasien{" + 
+			"pesan = '" + pesan + '\'' + 
+			",response = '" + response + '\'' + 
+			",pasien = '" + pasien + '\'' + 
+			"}";
 		}
-
-		@Override
-		public ResponsePasien[] newArray(int size) {
-			return new ResponsePasien[size];
-		}
-	};
 }

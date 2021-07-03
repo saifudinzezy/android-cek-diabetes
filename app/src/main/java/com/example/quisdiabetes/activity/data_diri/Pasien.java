@@ -1,15 +1,25 @@
 package com.example.quisdiabetes.activity.data_diri;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -28,7 +38,15 @@ import com.example.quisdiabetes.model.ResponseCRUD;
 import com.example.quisdiabetes.model.history.HistoryItem;
 import com.example.quisdiabetes.network.ApiService;
 import com.example.quisdiabetes.network.RetroClient;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.gson.Gson;
+
+import org.json.JSONArray;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -56,13 +74,18 @@ public class Pasien extends AppCompatActivity {
     RadioButton rbL;
     @BindView(R.id.rb_p)
     RadioButton rbP;
-    String jenkel;
+    String jenkel, isPuasa = "ya";
     SharedRef sharedRef;
     @BindView(R.id.sp_provinsi)
     Spinner spProvinsi;
     String provinsi = "";
     @BindView(R.id.edt_hp)
     TextInputEditText edtHp;
+    @BindView(R.id.bottom_sheet)
+    FrameLayout bottomSheet;
+    BottomSheetBehavior sheetBehavior;
+    BottomSheetDialog sheetDialog;
+    List arrQuestion = new ArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +95,7 @@ public class Pasien extends AppCompatActivity {
 
         getSupportActionBar().setTitle("Data Diri");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        sheetBehavior = BottomSheetBehavior.from(bottomSheet);
 
         sharedRef = new SharedRef(this);
         initSpProvinsi();
@@ -141,10 +165,11 @@ public class Pasien extends AppCompatActivity {
 
     @OnClick(R.id.btn_simpan)
     public void onViewClicked() {
-        getDataDiri();
+//        saveDataDiri();
+        popUp();
     }
 
-    private void getDataDiri() {
+    private void saveDataDiri(String isPuasa, String lamaPuasa, String alasan) {
         HistoryItem historyItem = new HistoryItem();
         //setter
         historyItem.setUmur(edtUmur.getText().toString());
@@ -154,16 +179,17 @@ public class Pasien extends AppCompatActivity {
         if (provinsi == null) this.provinsi = "Aceh";
         historyItem.setProvinsi(provinsi);
 
-        savePasien(historyItem);
+        savePasien(historyItem, isPuasa, lamaPuasa, alasan);
     }
 
-    private void savePasien(HistoryItem historyItem) {
+    private void savePasien(HistoryItem historyItem, String isPuasa, String lamaPuasa, String alasan) {
         sharedRef.saveUUIP(RandomString.generateRandomStringByUUID());
         String uuip = sharedRef.getUUIP();
 
         ApiService service = RetroClient.getApiService();
         Call<ResponseCRUD> call = service.savePasien(sharedRef.getUUID(), uuip, historyItem.getUmur(), historyItem.getJenkel(),
-                historyItem.getRasioDm(), historyItem.getPekerjaan(), historyItem.getProvinsi(), edtHp.getText().toString());
+                historyItem.getRasioDm(), historyItem.getPekerjaan(), historyItem.getProvinsi(), edtHp.getText().toString(),
+                isPuasa, lamaPuasa, alasan);
 
         call.enqueue(new Callback<ResponseCRUD>() {
             @Override
@@ -189,5 +215,123 @@ public class Pasien extends AppCompatActivity {
                 Log.e("error ", t.getMessage());
             }
         });
+    }
+
+    private void popUp() {
+        CheckBox cb1, cb2, cb3, cb4, cb5, cb6, cb7;
+        ImageView imgClose;
+        LinearLayout lnLongDay, lnQUeston;
+        Button btnNext;
+        EditText edtLongDay;
+        RadioGroup rgQuestion;
+        RadioButton rbY, rbN;
+
+        View view = getLayoutInflater().inflate(R.layout.form_plus_pasien, null);
+
+        sheetDialog = new BottomSheetDialog(this);
+        sheetDialog.setContentView(view);
+        setupFullHeight(sheetDialog);
+
+        //init
+        imgClose = view.findViewById(R.id.img_close);
+        lnLongDay = view.findViewById(R.id.ln_long_day);
+        lnQUeston = view.findViewById(R.id.ln_question);
+        rgQuestion = view.findViewById(R.id.rg_question);
+        rbY = view.findViewById(R.id.rb_y);
+        rbN = view.findViewById(R.id.rb_n);
+        edtLongDay = view.findViewById(R.id.edt_long_day);
+        btnNext = view.findViewById(R.id.btn_save);
+        cb1 = view.findViewById(R.id.cb_1); cb2 = view.findViewById(R.id.cb_2);
+        cb3 = view.findViewById(R.id.cb_3); cb4 = view.findViewById(R.id.cb_4);
+        cb5 = view.findViewById(R.id.cb_5); cb6 = view.findViewById(R.id.cb_6);
+        cb7 = view.findViewById(R.id.cb_7);
+
+        rbY.setChecked(true);
+
+        rgQuestion.setOnCheckedChangeListener((group, checkedId) -> {
+            switch (checkedId) {
+                case R.id.rb_y:
+//                    Toast.makeText(this, rbY.getText(), Toast.LENGTH_SHORT).show();
+                    if (rbY.isChecked()) {
+                        removeAll();
+                        unCheck(cb1); unCheck(cb2); unCheck(cb3); unCheck(cb4);
+                        unCheck(cb5); unCheck(cb6); unCheck(cb7);
+                        lnLongDay.setVisibility(View.VISIBLE);
+                        lnQUeston.setVisibility(View.GONE);
+                        isPuasa = "ya";
+                    }
+                    break;
+                case R.id.rb_n:
+//                    Toast.makeText(this, rbN.getText(), Toast.LENGTH_SHORT).show();
+                    if (rbN.isChecked()) {
+                        lnLongDay.setVisibility(View.GONE);
+                        lnQUeston.setVisibility(View.VISIBLE);
+                        isPuasa = "tidak";
+                    }
+                    break;
+                default:
+                    Toast.makeText(this, "Nothing", Toast.LENGTH_SHORT).show();
+                    break;
+            }
+        });
+
+        imgClose.setOnClickListener(v -> {
+            sheetDialog.dismiss();
+        });
+
+        btnNext.setOnClickListener(v -> {
+            JSONArray jsonArray = new JSONArray();
+            removeAll();
+            getCheckbox(cb1); getCheckbox(cb2); getCheckbox(cb3);
+            getCheckbox(cb4); getCheckbox(cb5); getCheckbox(cb6);
+            getCheckbox(cb7);
+
+            putJsonArr(jsonArray);
+            Log.d("checkbox", jsonArray.toString());
+            saveDataDiri(isPuasa, edtLongDay.getText().toString(), jsonArray.toString());
+        });
+
+        sheetDialog.show();
+    }
+
+    private void setupFullHeight(BottomSheetDialog bottomSheetDialog) {
+        FrameLayout bottomSheet = (FrameLayout) bottomSheetDialog.findViewById(R.id.design_bottom_sheet);
+        BottomSheetBehavior behavior = BottomSheetBehavior.from(bottomSheet);
+        ViewGroup.LayoutParams layoutParams = bottomSheet.getLayoutParams();
+
+        int windowHeight = getWindowHeight();
+        if (layoutParams != null) {
+            layoutParams.height = windowHeight;
+        }
+        bottomSheet.setLayoutParams(layoutParams);
+        behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+    }
+
+    private int getWindowHeight() {
+        // Calculate window height for fullscreen use
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        return displayMetrics.heightPixels;
+    }
+
+    private void getCheckbox(CheckBox checkBox){
+        if (checkBox.isChecked()) {
+            arrQuestion.add(checkBox.getText().toString());
+        }
+    }
+
+    private void unCheck(CheckBox checkBox){
+        checkBox.setChecked(false);
+    }
+
+    private void removeAll(){
+        arrQuestion.clear();
+    }
+
+    private String putJsonArr(JSONArray jsonArray){
+        for (int i = 0; i < arrQuestion.size(); i++) {
+            jsonArray.put(arrQuestion.get(i));
+        }
+        return jsonArray.toString();
     }
 }

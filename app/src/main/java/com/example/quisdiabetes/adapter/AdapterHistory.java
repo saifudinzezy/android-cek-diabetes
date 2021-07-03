@@ -66,6 +66,16 @@ public class AdapterHistory extends RecyclerView.Adapter<AdapterHistory.ViewHold
                     + "Lama Menderita DM : "+pasienItem.getRasioDm() +" (Tahun)\n"
                     + "Pekerjaan : "+pasienItem.getPekerjaan() +"\n"
                     + "Provinsi Tinggal : "+pasienItem.getProvinsi() +"\n";
+
+            if (pasienItem.isIsPuasa()){
+                pasien += "Saya berpuasa selama : "+pasienItem.getLamaPuasa();
+            } else {
+                String alasan = "";
+                for (int i = 0; i < pasienItem.getAlasan().size(); i++) {
+                    alasan += "- "+pasienItem.getAlasan().get(i) +"\n";
+                }
+                pasien += "Saya tidak berpuasa karena : \n\t"+alasan;
+            }
             holder.tvResikoDesc.setText(pasien);
         } else {
             holder.cvResiko.setVisibility(View.GONE);

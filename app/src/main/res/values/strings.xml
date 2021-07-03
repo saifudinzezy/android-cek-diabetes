@@ -8,4 +8,12 @@
     <string name="resiko_tinggi">Pasien pada kategori risiko tinggi sangat dianjurkan untuk tidak menjalankan
         puasa Ramadan karena sangat berisiko terjadinya komplikasi akut. Jika tetap ingin menjalankan puasa,
         maka harus dalam pengawasan dokter.</string>
+    <string name="alasan_tidak_berpuasa">Alasan tidak berpuasa ?</string>
+    <string name="hiperglikemi">Hiperglikemi</string>
+    <string name="hipoglikemi">Hipoglikemi</string>
+    <string name="sakit_dirawat_di_rumah_sakit">Sakit/dirawat di rumah sakit</string>
+    <string name="takut_kawatir">Takut/kawatir</string>
+    <string name="tidak_kuat">Tidak kuat</string>
+    <string name="punya_komplikasi">Punya komplikasi</string>
+    <string name="anjuran_petugas_kesehatan">Anjuran petugas kesehatan</string>
 </resources>

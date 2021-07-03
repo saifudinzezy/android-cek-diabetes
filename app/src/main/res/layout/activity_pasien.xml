@@ -1,153 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:hint="Umur (tahun)">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/edt_umur"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal" />
+                android:layout_margin="16dp"
+                android:hint="Umur (tahun)">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <EditText
+                    android:id="@+id/edt_umur"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/v_16dp"
-            android:layout_marginRight="@dimen/v_16dp"
-            android:text="Jenis Kelamin" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <RadioGroup
-            android:id="@+id/rg_opt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/v_16dp"
-            android:layout_marginRight="@dimen/v_16dp"
-            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/v_16dp"
+                android:layout_marginRight="@dimen/v_16dp"
+                android:text="Jenis Kelamin" />
 
-            <RadioButton
-                android:id="@+id/rb_l"
+            <RadioGroup
+                android:id="@+id/rg_opt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/v_16dp"
+                android:layout_marginRight="@dimen/v_16dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_l"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="Laki-Laki"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_p"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:text="Perempuan"
+                    android:textSize="18sp" />
+
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/v_16dp"
+                android:layout_marginRight="@dimen/v_16dp"
+                android:layout_marginBottom="@dimen/v_16dp"
+                android:hint="Lama Menderita (tahun)">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_rasio_dm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/v_16dp"
+                android:layout_marginRight="@dimen/v_16dp"
+                android:layout_marginBottom="@dimen/v_16dp"
+                android:hint="Pekerjaan">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_pekerjaan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/v_16dp"
+                android:layout_marginRight="@dimen/v_16dp"
+                android:layout_marginBottom="@dimen/v_16dp"
+                android:hint="No. HP / WA">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_hp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/v_16dp"
+                android:layout_marginRight="@dimen/v_16dp"
+                android:text="Provinsi tempat tinggal" />
+
+            <Spinner
+                android:id="@+id/sp_provinsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/v_16dp"
+                android:layout_marginRight="@dimen/v_16dp"
+                android:layout_marginBottom="@dimen/v_16dp" />
+
+            <ProgressBar
+                android:id="@+id/loading"
+                style="?android:attr/progressBarStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="1"
-                android:checked="true"
-                android:text="Laki-Laki"
-                android:textSize="18sp" />
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/v_16dp"
+                android:visibility="gone" />
 
-            <RadioButton
-                android:id="@+id/rb_p"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="1"
-                android:text="Perempuan"
-                android:textSize="18sp" />
-
-        </RadioGroup>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/v_16dp"
-            android:layout_marginRight="@dimen/v_16dp"
-            android:layout_marginBottom="@dimen/v_16dp"
-            android:hint="Lama Menderita (tahun)">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_rasio_dm"
+            <Button
+                android:id="@+id/btn_simpan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal" />
+                android:layout_margin="@dimen/v_16dp"
+                android:layout_marginTop="@dimen/v_30dp"
+                android:background="@drawable/btn_curve_pres"
+                android:clickable="true"
+                android:text="lanjut"
+                android:textColor="@android:color/white" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/v_16dp"
-            android:layout_marginRight="@dimen/v_16dp"
-            android:layout_marginBottom="@dimen/v_16dp"
-            android:hint="Pekerjaan">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_pekerjaan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textCapWords" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/v_16dp"
-            android:layout_marginRight="@dimen/v_16dp"
-            android:layout_marginBottom="@dimen/v_16dp"
-            android:hint="No. HP / WA">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_hp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="phone" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/v_16dp"
-            android:layout_marginRight="@dimen/v_16dp"
-            android:text="Provinsi tempat tinggal" />
-
-        <Spinner
-            android:id="@+id/sp_provinsi"
-            android:layout_marginLeft="@dimen/v_16dp"
-            android:layout_marginRight="@dimen/v_16dp"
-            android:layout_marginBottom="@dimen/v_16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <ProgressBar
-            android:id="@+id/loading"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/v_16dp"
-            android:visibility="gone" />
-
-        <Button
-            android:id="@+id/btn_simpan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/v_16dp"
-            android:layout_marginTop="@dimen/v_30dp"
-            android:background="@drawable/btn_curve_pres"
-            android:clickable="true"
-            android:text="lanjut"
-            android:textColor="@android:color/white" />
-
-    </LinearLayout>
-
-</ScrollView>
+    </androidx.core.widget.NestedScrollView>
+    <FrameLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

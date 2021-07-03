@@ -22,7 +22,8 @@ public interface ApiService {
     Call<ResponseCRUD> savePasien(@Field("uuid") String uuid, @Field("uuip") String uuip, @Field("umur") String umur,
                                   @Field("jenkel") String jenkel, @Field("rasio_dm") String rasioDm,
                                   @Field("pekerjaan") String pekerjaan, @Field("provinsi") String provinsi,
-                                  @Field("no_hp") String noHp);
+                                  @Field("no_hp") String noHp, @Field("is_puasa") String isPuasa,
+                                  @Field("lama_puasa") String lamaPuasa, @Field("alasan") String alasan);
 
     @FormUrlEncoded
     @POST("create/question.php")
