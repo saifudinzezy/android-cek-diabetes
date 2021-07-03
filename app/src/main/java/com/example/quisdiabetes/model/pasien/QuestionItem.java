@@ -1,8 +1,11 @@
 package com.example.quisdiabetes.model.pasien;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
-public class QuestionItem{
+public class QuestionItem implements Parcelable {
 
 	@SerializedName("date")
 	private String date;
@@ -58,4 +61,39 @@ public class QuestionItem{
 			",skor = '" + skor + '\'' + 
 			"}";
 		}
+
+	@Override
+	public int describeContents() {
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeString(this.date);
+		dest.writeString(this.question);
+		dest.writeString(this.answer);
+		dest.writeString(this.skor);
+	}
+
+	public QuestionItem() {
+	}
+
+	protected QuestionItem(Parcel in) {
+		this.date = in.readString();
+		this.question = in.readString();
+		this.answer = in.readString();
+		this.skor = in.readString();
+	}
+
+	public static final Parcelable.Creator<QuestionItem> CREATOR = new Parcelable.Creator<QuestionItem>() {
+		@Override
+		public QuestionItem createFromParcel(Parcel source) {
+			return new QuestionItem(source);
+		}
+
+		@Override
+		public QuestionItem[] newArray(int size) {
+			return new QuestionItem[size];
+		}
+	};
 }

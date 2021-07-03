@@ -160,6 +160,9 @@ public class PasienItem implements Parcelable {
 			"}";
 		}
 
+	public PasienItem() {
+	}
+
 	@Override
 	public int describeContents() {
 		return 0;
@@ -181,9 +184,6 @@ public class PasienItem implements Parcelable {
 		dest.writeStringList(this.alasan);
 	}
 
-	public PasienItem() {
-	}
-
 	protected PasienItem(Parcel in) {
 		this.provinsi = in.readString();
 		this.isPuasa = in.readByte() != 0;
@@ -200,7 +200,7 @@ public class PasienItem implements Parcelable {
 		this.alasan = in.createStringArrayList();
 	}
 
-	public static final Parcelable.Creator<PasienItem> CREATOR = new Parcelable.Creator<PasienItem>() {
+	public static final Creator<PasienItem> CREATOR = new Creator<PasienItem>() {
 		@Override
 		public PasienItem createFromParcel(Parcel source) {
 			return new PasienItem(source);
