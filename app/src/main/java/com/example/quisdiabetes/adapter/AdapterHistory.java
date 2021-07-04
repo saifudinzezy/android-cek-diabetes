@@ -68,7 +68,7 @@ public class AdapterHistory extends RecyclerView.Adapter<AdapterHistory.ViewHold
                     + "Provinsi Tinggal : "+pasienItem.getProvinsi() +"\n";
 
             if (pasienItem.isIsPuasa()){
-                pasien += "Saya berpuasa selama : "+pasienItem.getLamaPuasa();
+                pasien += "Saya berpuasa selama : "+pasienItem.getLamaPuasa() + " Hari";
             } else {
                 String alasan = "";
                 for (int i = 0; i < pasienItem.getAlasan().size(); i++) {
