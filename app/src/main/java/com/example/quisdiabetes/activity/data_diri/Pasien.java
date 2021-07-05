@@ -220,7 +220,6 @@ public class Pasien extends AppCompatActivity {
     private void popUp() {
         CheckBox cb1, cb2, cb3, cb4, cb5, cb6, cb7;
         ImageView imgClose;
-        LinearLayout lnLongDay, lnQUeston;
         Button btnNext;
         EditText edtLongDay;
         RadioGroup rgQuestion;
@@ -234,8 +233,6 @@ public class Pasien extends AppCompatActivity {
 
         //init
         imgClose = view.findViewById(R.id.img_close);
-        lnLongDay = view.findViewById(R.id.ln_long_day);
-        lnQUeston = view.findViewById(R.id.ln_question);
         rgQuestion = view.findViewById(R.id.rg_question);
         rbY = view.findViewById(R.id.rb_y);
         rbN = view.findViewById(R.id.rb_n);
@@ -247,27 +244,16 @@ public class Pasien extends AppCompatActivity {
         cb7 = view.findViewById(R.id.cb_7);
 
         rbY.setChecked(true);
-
         rgQuestion.setOnCheckedChangeListener((group, checkedId) -> {
             switch (checkedId) {
                 case R.id.rb_y:
-//                    Toast.makeText(this, rbY.getText(), Toast.LENGTH_SHORT).show();
-                    if (rbY.isChecked()) {
                         removeAll();
                         unCheck(cb1); unCheck(cb2); unCheck(cb3); unCheck(cb4);
                         unCheck(cb5); unCheck(cb6); unCheck(cb7);
-                        lnLongDay.setVisibility(View.VISIBLE);
-                        lnQUeston.setVisibility(View.GONE);
                         isPuasa = "ya";
-                    }
                     break;
                 case R.id.rb_n:
-//                    Toast.makeText(this, rbN.getText(), Toast.LENGTH_SHORT).show();
-                    if (rbN.isChecked()) {
-                        lnLongDay.setVisibility(View.GONE);
-                        lnQUeston.setVisibility(View.VISIBLE);
                         isPuasa = "tidak";
-                    }
                     break;
                 default:
                     Toast.makeText(this, "Nothing", Toast.LENGTH_SHORT).show();

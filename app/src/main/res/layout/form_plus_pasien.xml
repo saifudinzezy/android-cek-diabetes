@@ -26,7 +26,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Apakah ramadhan sebelumnya berpuasa ?" />
+                android:text="Apakah ramadan sebelumnya Anda berpuasa ?" />
 
             <RadioGroup
                 android:id="@+id/rg_question"
@@ -58,80 +58,65 @@
 
             </RadioGroup>
 
-            <LinearLayout
-                android:id="@+id/ln_long_day"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:text="Berapa hari Anda berpuasa di ramadan tahun yg lalu ?" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Berapa hari anda berpuasa di ramadhan tahun yang lalu ?" />
-
-                <EditText
-                    android:id="@+id/edt_long_day"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/v_16dp"
-                    android:hint="Ketik disini"
-                    android:inputType="number" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ln_question"
+            <EditText
+                android:id="@+id/edt_long_day"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:orientation="vertical">
+                android:layout_marginBottom="@dimen/v_16dp"
+                android:hint="Ketik disini"
+                android:inputType="number" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/alasan_tidak_berpuasa" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/alasan_tidak_berpuasa" />
 
-                <CheckBox
-                    android:id="@+id/cb_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/hiperglikemi" />
+            <CheckBox
+                android:id="@+id/cb_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hiperglikemi" />
 
-                <CheckBox
-                    android:id="@+id/cb_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/hipoglikemi" />
+            <CheckBox
+                android:id="@+id/cb_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hipoglikemi" />
 
-                <CheckBox
-                    android:id="@+id/cb_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sakit_dirawat_di_rumah_sakit" />
+            <CheckBox
+                android:id="@+id/cb_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sakit_dirawat_di_rumah_sakit" />
 
-                <CheckBox
-                    android:id="@+id/cb_4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/takut_kawatir" />
+            <CheckBox
+                android:id="@+id/cb_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/takut_kawatir" />
 
-                <CheckBox
-                    android:id="@+id/cb_5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tidak_kuat" />
+            <CheckBox
+                android:id="@+id/cb_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tidak_kuat" />
 
-                <CheckBox
-                    android:id="@+id/cb_6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/punya_komplikasi" />
+            <CheckBox
+                android:id="@+id/cb_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/punya_komplikasi" />
 
-                <CheckBox
-                    android:id="@+id/cb_7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/anjuran_petugas_kesehatan" />
-            </LinearLayout>
+            <CheckBox
+                android:id="@+id/cb_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/anjuran_petugas_kesehatan" />
 
             <Button
                 android:id="@+id/btn_save"

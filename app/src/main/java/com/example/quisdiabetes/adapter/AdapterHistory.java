@@ -60,22 +60,20 @@ public class AdapterHistory extends RecyclerView.Adapter<AdapterHistory.ViewHold
                 holder.cvResiko.setCardBackgroundColor(ContextCompat.getColor(context, R.color.pink));
             }
 
-            String pasien = "UMUR : "+pasienItem.getUmur() +" (Tahun)\n"
-                    + "No. HP / WA : "+pasienItem.getNoHp() +"\n"
-                    + "Jenis Kelamin : "+pasienItem.getJenkel() +"\n"
-                    + "Lama Menderita DM : "+pasienItem.getRasioDm() +" (Tahun)\n"
-                    + "Pekerjaan : "+pasienItem.getPekerjaan() +"\n"
-                    + "Provinsi Tinggal : "+pasienItem.getProvinsi() +"\n";
+            String pasien = "UMUR : " + pasienItem.getUmur() + " (Tahun)\n"
+                    + "No. HP / WA : " + pasienItem.getNoHp() + "\n"
+                    + "Jenis Kelamin : " + pasienItem.getJenkel() + "\n"
+                    + "Lama Menderita DM : " + pasienItem.getRasioDm() + " (Tahun)\n"
+                    + "Pekerjaan : " + pasienItem.getPekerjaan() + "\n"
+                    + "Provinsi Tinggal : " + pasienItem.getProvinsi() + "\n\n";
 
-            if (pasienItem.isIsPuasa()){
-                pasien += "Saya berpuasa selama : "+pasienItem.getLamaPuasa() + " Hari";
-            } else {
-                String alasan = "";
-                for (int i = 0; i < pasienItem.getAlasan().size(); i++) {
-                    alasan += "- "+pasienItem.getAlasan().get(i) +"\n";
-                }
-                pasien += "Saya tidak berpuasa karena : \n\t"+alasan;
+            pasien += "Saya berpuasa selama : " + pasienItem.getLamaPuasa() + " Hari\n";
+            String alasan = "";
+            for (int i = 0; i < pasienItem.getAlasan().size(); i++) {
+                alasan += "- " + pasienItem.getAlasan().get(i) + "\n";
             }
+            pasien += "Saya tidak berpuasa karena : \n" + alasan;
+
             holder.tvResikoDesc.setText(pasien);
         } else {
             holder.cvResiko.setVisibility(View.GONE);
