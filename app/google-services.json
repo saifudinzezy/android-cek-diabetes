@@ -1,33 +1,78 @@
 {
   "project_info": {
-    "project_number": "48150191484",
-    "project_id": "diabet-30dd5",
-    "storage_bucket": "diabet-30dd5.appspot.com"
+    "project_number": "428860326683",
+    "project_id": "cek-diabet",
+    "storage_bucket": "cek-diabet.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:48150191484:android:c85a7599be721b0fc2d8f9",
+        "mobilesdk_app_id": "1:428860326683:android:24ec12a9aab1a761f009be",
         "android_client_info": {
           "package_name": "com.cekdiabet"
         }
       },
       "oauth_client": [
         {
-          "client_id": "48150191484-rikievmh6h87fl0cmjpvpnniacjbuf3q.apps.googleusercontent.com",
+          "client_id": "428860326683-cs6vnto4n3gacjv5v4h2vtjjs5dmdggf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cekdiabet",
+            "certificate_hash": "78e2c9b5b0cdbda411dbe7f48dafb611e83ceb20"
+          }
+        },
+        {
+          "client_id": "428860326683-7boa65anst70of58d36vc5lbnvi93all.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDOm2GMwl2ozAETUqwUa_WWY0PC0hdSMfw"
+          "current_key": "AIzaSyB_lPX61c9qgWVvY90T9aUkb_Rs8c4Jurg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "48150191484-rikievmh6h87fl0cmjpvpnniacjbuf3q.apps.googleusercontent.com",
+              "client_id": "428860326683-7boa65anst70of58d36vc5lbnvi93all.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428860326683:android:eeec3af80f2f602df009be",
+        "android_client_info": {
+          "package_name": "com.cekdiabetes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "428860326683-6fpnmps121ddaqsqtv61lm026tdqug30.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cekdiabetes",
+            "certificate_hash": "78e2c9b5b0cdbda411dbe7f48dafb611e83ceb20"
+          }
+        },
+        {
+          "client_id": "428860326683-7boa65anst70of58d36vc5lbnvi93all.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_lPX61c9qgWVvY90T9aUkb_Rs8c4Jurg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "428860326683-7boa65anst70of58d36vc5lbnvi93all.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
