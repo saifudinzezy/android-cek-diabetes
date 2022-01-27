@@ -33,4 +33,11 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("create/rating.php")
     Call<ResponseCRUD> saveRating(@Field("star") String star, @Field("ulasan") String ulasan);
+
+    @FormUrlEncoded
+    @POST("create/ulasan.php")
+    Call<ResponseCRUD> saveUlasan(@Field("q1") String q1, @Field("q2") String q2, @Field("q3") String q3,
+                                  @Field("q4") String q4, @Field("q5") String q5, @Field("q6") String q6,
+                                  @Field("q7") String q7, @Field("q8") String q8,
+                                  @Field("q9") String q9, @Field("q10") String q10);
 }

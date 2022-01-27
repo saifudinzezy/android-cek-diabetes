@@ -16,4 +16,14 @@
     <string name="tidak_kuat">Tidak kuat</string>
     <string name="punya_komplikasi">Punya komplikasi</string>
     <string name="anjuran_petugas_kesehatan">Anjuran petugas kesehatan</string>
+    <string name="q_1">1. Saya akan menggunakan aplikasi ini secara terus menerus sesuai kebutuhan.</string>
+    <string name="q_2">2. Menurut saya aplikasi ini tidak terlalu rumit.</string>
+    <string name="q_3">3. Menurut saya aplikasi ini mudah digunakan.</string>
+    <string name="q_4">4. Bagi saya, saya membutuhkan bantuan orang Teknik (IT) untuk mengoperasikan aplikasi ini.</string>
+    <string name="q_5">5. Saya menemukan berbagai fungsi dalam aplikasi ini yang terintegrasi dengan baik.</string>
+    <string name="q_6">6. Menurut saya ada beberapa fungsi yang tidak konsistensi dalam aplikasi ini.</string>
+    <string name="q_7">7. Menurut saya pengguna lain akan dengan mudah mempelajari cara penggunaan aplikasi ini dengan sangat cepat.</string>
+    <string name="q_8">8. Menurut saya apliasi ini sangat tidak praktis untuk digunakan.</string>
+    <string name="q_9">9. Saya merasa sangat percaya diri dalam menggunakan aplikasi ini.</string>
+    <string name="q_10">10. Saya perlu mempelajari aplikasi ini sebelum saya menggunakannya.</string>
 </resources>

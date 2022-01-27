@@ -16,7 +16,9 @@
         <activity android:name=".activity.data_diri.Pasien">
 
         </activity>
-        <activity android:name=".Rating" />
+        <activity android:name=".Rating" >
+
+        </activity>
         <activity
             android:name=".activity.question.DetailQuestion" />
         <activity android:name=".activity.SkorDM" />

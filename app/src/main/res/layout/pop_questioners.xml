@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/v_16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="Berikan rating dengan cara geser ke kanan / kekiri, Nilai 1 (sangat tidak setuju) sampai nilai 5 (sangat setuju)."
+            android:textSize="20sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/q_1"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_sb_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:text="0/5"
+            android:textSize="14sp" />
+
+        <SeekBar
+            android:id="@+id/sb_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/q_2"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_sb_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:text="0/5"
+            android:textSize="14sp" />
+
+        <SeekBar
+            android:id="@+id/sb_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/q_3"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_sb_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:text="0/5"
+            android:textSize="14sp" />
+
+        <SeekBar
+            android:id="@+id/sb_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/q_4"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_sb_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:text="0/5"
+            android:textSize="14sp" />
+
+        <SeekBar
+            android:id="@+id/sb_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/q_5"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_sb_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:text="0/5"
+            android:textSize="14sp" />
+
+        <SeekBar
+            android:id="@+id/sb_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/q_6"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_sb_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:text="0/5"
+            android:textSize="14sp" />
+
+        <SeekBar
+            android:id="@+id/sb_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/q_7"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_sb_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:text="0/5"
+            android:textSize="14sp" />
+
+        <SeekBar
+            android:id="@+id/sb_7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/q_8"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_sb_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:text="0/5"
+            android:textSize="14sp" />
+
+        <SeekBar
+            android:id="@+id/sb_8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/q_9"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_sb_9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:text="0/5"
+            android:textSize="14sp" />
+
+        <SeekBar
+            android:id="@+id/sb_9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/q_10"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_sb_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:text="0/5"
+            android:textSize="14sp" />
+
+        <SeekBar
+            android:id="@+id/sb_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="5" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/v_16dp"
+            android:background="@drawable/btn_curve_pres"
+            android:text="Kirim Ulasan"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 
 import com.example.quisdiabetes.R;
+import com.example.quisdiabetes.Rating;
 import com.example.quisdiabetes.activity.MainActivity;
 import com.example.quisdiabetes.activity.history.History;
 import com.example.quisdiabetes.helper.SharedRef;
@@ -32,6 +34,8 @@ import com.example.quisdiabetes.network.ApiService;
 import com.example.quisdiabetes.network.RetroClient;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Type;
 import java.util.List;
@@ -163,52 +167,39 @@ public class DetailQuestion extends AppCompatActivity {
         }
     }
 
+    private View  initViewDialog(@NotNull View dialog, int view){
+        return dialog.findViewById(view);
+    }
+
     private void rating() {
+        /*String valQ1, valQ2, valQ3, valQ4, valQ5, valQ6, valQ7, valQ8, valQ9, valQ10 = "";
+        TextView tvSb1, tvSb2, tvSb3, tvSb4, tvSb5, tvSb6, tvSb7, tvSb8, tvSb9, tvSb10;
+        SeekBar sb1, sb2, sb3, sb4, sb5, sb6, sb7, sb8, sb9, sb10;
+
         ViewGroup viewGroup = findViewById(android.R.id.content);
-        View dialogView = LayoutInflater.from(DetailQuestion.this).inflate(R.layout.pop_rating,
+        View dialogView = LayoutInflater.from(DetailQuestion.this).inflate(R.layout.pop_questioners,
                 viewGroup, false);
         AlertDialog.Builder builder = new AlertDialog.Builder(DetailQuestion.this);
         builder.setView(dialogView);
         AlertDialog alertDialog = builder.create();
         alertDialog.setCancelable(false);
         //init ui
+        tvSb1 = (TextView) initViewDialog(dialogView, R.id.tv_sb_1);
+        sb1 = (SeekBar) initViewDialog(dialogView, R.id.sb_1);
         Button btnSend = dialogView.findViewById(R.id.btn_submit);
-        TextView mRatingScale = dialogView.findViewById(R.id.tv_rating);
-        EditText edtFeedback = dialogView.findViewById(R.id.edt_feedback);
-        RatingBar ratingBar = dialogView.findViewById(R.id.ratingBar);
+//        SeekBar sbq1 = dialogView.findViewById(R.id.sb_1);
+//        SeekBar sbq2 = dialogView.findViewById(R.id.sb_2);
 
-        ratingBar.setOnRatingBarChangeListener((ratingBar1, v, b) -> {
-            mRatingScale.setText(String.valueOf(v));
-            switch ((int) ratingBar1.getRating()) {
-                case 1:
-                    mRatingScale.setText("Very bad");
-                    break;
-                case 2:
-                    mRatingScale.setText("Need some improvement");
-                    break;
-                case 3:
-                    mRatingScale.setText("Good");
-                    break;
-                case 4:
-                    mRatingScale.setText("Great");
-                    break;
-                case 5:
-                    mRatingScale.setText("Awesome. I love it");
-                    break;
-                default:
-                    mRatingScale.setText("");
-            }
-        });
-
-        btnSend.setOnClickListener(v -> {
+       *//* btnSend.setOnClickListener(v -> {
             if (ratingBar.getRating() == 0) {
                 Toast.makeText(DetailQuestion.this, "Please Rating Star", Toast.LENGTH_LONG).show();
             } else {
                 saveRating("" + ratingBar.getRating(), edtFeedback.getText().toString(), alertDialog);
             }
-        });
+        });*//*
 
-        alertDialog.show();
+        alertDialog.show();*/
+        startActivity(new Intent(DetailQuestion.this, Rating.class));
     }
 
     private void saveRating(String star, String ulasan, AlertDialog alertDialog) {
